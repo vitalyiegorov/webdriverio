@@ -345,7 +345,7 @@ export function switchSyncFlag (fn: Function) {
                 const switchFlag = runAsync
                 const res = result.apply(this, args)
                 if (typeof result.finally === 'function') {
-                    return result.finally(() => (runAsync = switchFlag))
+                    return result.finally(() =>  { runAsync = switchFlag })
                 }
 
                 runAsync = switchFlag
